@@ -88,10 +88,10 @@ function Header() {
 
                     <Link
                         style={{ textDecoration: 'none', color: '#333' }}
-                        to="/blog"
+                        to="/aboutus"
                         onClick={() => setCheckHeader(1)}
                     >
-                        <li className={cx(checkHeader === 1 ? 'checkHeader' : '')}>Bài Viết</li>
+                        <li className={cx(checkHeader === 1 ? 'checkHeader' : '')}>About Us</li>
                     </Link>
                     <Link
                         style={{ textDecoration: 'none', color: '#333' }}

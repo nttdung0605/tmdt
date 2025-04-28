@@ -72,7 +72,7 @@ class ControllerUser {
     }
     async GetUser(req, res) {
         const token = req.cookies;
-        const decoded = jwtDecode(token.Token);
+        const decoded = jwt.decode(token.Token);
         if (decoded) {
             ModelUser.findOne({ email: decoded.email }).then((dataUser) => {
                 return res.status(200).json(dataUser);
@@ -83,7 +83,7 @@ class ControllerUser {
     }
     async ChangePass(req, res, next) {
         const token = req.cookies;
-        const decoded = jwtDecode(token.Token);
+        const decoded = jwt.decode(token.Token);
         const dataUser = await ModelUser.findOne({ email: decoded.email });
         if (dataUser) {
             const saltRounds = 10;
@@ -102,7 +102,7 @@ class ControllerUser {
     async EditProfile(req, res) {
         try {
             const token = req.cookies.Token;
-            const decoded = jwtDecode(token);
+            const decoded = jwt.decode(token.Token);
 
             const updateUser = await ModelUser.findOne({ email: decoded.email });
 
@@ -144,7 +144,7 @@ class ControllerUser {
     async ChangeAvatar(req, res, next) {
         try {
             const token = req.cookies.Token;
-            const decoded = jwtDecode(token);
+            const decoded = jwt.decode(token.Token);
             const urlImg = req.file.filename;
 
             ModelUser.findOne({ email: decoded.email }).then((dataUser) => {
@@ -186,7 +186,7 @@ class ControllerUser {
     PostComments(req, res) {
         const { comment, idProduct, rating } = req.body;
         const token = req.cookies.Token;
-        const decoded = jwtDecode(token);
+        const decoded = jwt.decode(token.Token);
 
         const newComments = new ModelComments({
             id: idProduct,
@@ -200,7 +200,7 @@ class ControllerUser {
 
     GetOrder(req, res) {
         const token = req.cookies.Token;
-        const decoded = jwtDecode(token);
+        const decoded = jwt.decode(token.Token);
         if (decoded) {
             ModelPaymentSuccess.find({ email: decoded.email }).then((dataOrder) => {
                 return res.status(200).json(dataOrder);
@@ -211,7 +211,7 @@ class ControllerUser {
     async DeleteOrder(req, res) {
         try {
             const token = req.cookies.Token;
-            const decoded = jwtDecode(token);
+            const decoded = jwt.decode(token.Token);
 
             if (!decoded) {
                 return res.status(401).json({ message: 'Token không hợp lệ' });

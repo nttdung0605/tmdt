@@ -32,16 +32,16 @@ function SlideProducts() {
             <div className={cx('slider-container')}>
                 <Slider {...settings}>
                     <div>
-                        <img src={latest1} alt="..." />
+                        <img src={latest1} alt="..." style={{ width: '300px', height: '300px', objectFit: 'cover' }}/>
                     </div>
                     <div>
-                        <img src={latest2} alt="..." />
+                        <img src={latest2} alt="..." style={{ width: '300px', height: '300px', objectFit: 'cover' }}/>
                     </div>
                     <div>
-                        <img src={latest3} alt="..." />
+                        <img src={latest3} alt="..." style={{ width: '300px', height: '300px', objectFit: 'cover' }}/>
                     </div>
                     <div>
-                        <img src={latest4} alt="..." />
+                        <img src={latest4} alt="..." style={{ width: '300px', height: '300px', objectFit: 'cover' }}/>
                     </div>
                 </Slider>
             </div>

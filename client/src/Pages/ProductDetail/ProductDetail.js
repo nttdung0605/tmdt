@@ -1,14 +1,14 @@
-import React from 'react';
 import classNames from 'classnames/bind';
+import React from 'react';
 import styles from './ProductDetail.module.scss';
 
-import Header from '../../Layouts/Header/Header';
 import Footer from '../../Layouts/Footer/Footer';
+import Header from '../../Layouts/Header/Header';
 
 import request from '../../config/Connect';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addProduct } from '../../redux/actions';
@@ -98,7 +98,11 @@ function ProductDetail() {
                 <div className={cx('inner-detail')}>
                     <header className={cx('form-info-product')}>
                         <div className={cx('img-product')}>
-                            <img src={`http://localhost:5000/${dataProducts?.img}`} alt="" />
+                        <img
+                                src={`${dataProducts?.img}`}
+                                alt=""
+                                style={{ width: '500px', height: '500px', objectFit: 'cover' }}
+                            />
                         </div>
 
                         <div className={cx('features-caption')}>

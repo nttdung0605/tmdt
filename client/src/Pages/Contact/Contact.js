@@ -76,12 +76,12 @@ function Contact() {
 
                     <div className={cx('form-icons')}>
                         <FontAwesomeIcon icon={faPhone} />
-                        089.980.4328
+                        091.234.5678
                     </div>
 
                     <div className={cx('form-icons')}>
                         <FontAwesomeIcon icon={faEnvelope} />
-                        l2team.contact@gmail.com
+                        contact@gmail.com
                     </div>
                 </div>
             </div>

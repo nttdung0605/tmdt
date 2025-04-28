@@ -19,7 +19,7 @@ const io = new Server(server, {
 });
 
 app.use(cookieParser());
-app.use(cors({ origin:  process.env.CORS_CLIENT, credentials: true }));
+app.use(cors({ origin: process.env.CORS_CLIENT, credentials: true }));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, '')));

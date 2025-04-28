@@ -37,7 +37,11 @@ function HomePage({ dataProducts, checkPrice, checkType2, checkType3 }) {
                                 </button>
                             </div>
                             <Link style={{ textDecoration: 'none' }} key={item.id} to={`/prodetail/${item.id}`}>
-                                <img src={`http://localhost:5000/${item.img}`} alt="" />
+                                <img
+                                    src={`${item.img}`}
+                                    alt=""
+                                    style={{ width: '300px', height: '300px', objectFit: 'cover' }}
+                                />
                             </Link>
                             <div className={cx('main-slide-products')}>
                                 <h1>{item.nameProducts}</h1>

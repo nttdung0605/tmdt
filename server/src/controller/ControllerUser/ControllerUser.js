@@ -1,18 +1,18 @@
 const winston = require('winston');
 
 const logger = winston.createLogger({
-  level: 'info',
-  format: winston.format.json(),
-  transports: [
-    new winston.transports.File({ filename: 'error.log', level: 'error' }),
-    new winston.transports.File({ filename: 'combined.log' }),
-  ],
+    level: 'info',
+    format: winston.format.json(),
+    transports: [
+        new winston.transports.File({ filename: 'error.log', level: 'error' }),
+        new winston.transports.File({ filename: 'combined.log' }),
+    ],
 });
 
 const ModelUser = require('../../model/ModelUser');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const jwtDecode = require('jwt-decode'); // Fix incorrect destructuring
+const jwtDecode = require('jwt-decode');
 const sendMail = require('../ControllerEmail/SendEmail');
 const sendMailMessage = require('../ControllerEmail/SendMailMessage');
 const fs = require('fs');

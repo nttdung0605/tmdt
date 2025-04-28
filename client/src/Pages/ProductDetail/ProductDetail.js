@@ -98,11 +98,7 @@ function ProductDetail() {
                 <div className={cx('inner-detail')}>
                     <header className={cx('form-info-product')}>
                         <div className={cx('img-product')}>
-                        <img
-                                src={`${dataProducts?.img}`}
-                                alt=""
-                                style={{ width: '500px', height: '500px', objectFit: 'cover' }}
-                            />
+                            <img src={`http://localhost:5000/${dataProducts?.img}`} alt="" />
                         </div>
 
                         <div className={cx('features-caption')}>
